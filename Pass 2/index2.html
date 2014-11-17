@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  
+	<script type="text/javascript" src="src/anagram.js"></script>
+	<script type="text/javascript" src="src/dict.js"></script>
+	<script type="text/javascript">
+		var unscrambler = new AnagramUnscrambler(allWords.split(","));
+	</script>
+	
+</head>
+
+<body ng-controller="AnagramController">
+	<div id = "output"></div>
+
+	Enter string to unscramble:
+    <input type="text" ng-model="scrambledword" ng-change="getWords()"/>
+    <p/>
+    Words: {{unscrambler.printWords(scrambledword)}}
+    
+	<script type="text/javascript">
+		function AnagramController($scope) {
+			$scope.unscrambler = unscrambler;
+	    }
+	</script>
+
+</body>
+</html>

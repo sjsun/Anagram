@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="Game.js"></script>
+</head>
+
+<body>
+	<input type = "text" name = "word" id = "word">
+	<button onclick = "getWords()">Find Words!</button>
+	<div id = "output"></div>
+
+	<script type="text/javascript">
+		function getWords(){
+			var game = new Game();
+			game.play("word", "output");
+		}	
+	</script>
+
+</body>
+</html>
